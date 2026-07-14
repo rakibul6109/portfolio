@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Rakibul Islam - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    
+    /* Active Navigation Link */
+.nav-links a.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+    
+    /* Hamburger */
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:6px;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:var(--primary-color);
+    border-radius:5px;
+    transition:.35s;
+}
+
+/* Animation */
+
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(6px,6px);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(7px,-7px);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .nav-container{
+        position:relative;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-links{
+
+        position:absolute;
+        top:70px;
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:20px;
+
+        padding:25px 0;
+
+        box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+        display:none;
+
+        animation:fadeDown .35s ease;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+}
+
+/* Desktop */
+
+@media(min-width:769px){
+
+    .hamburger{
+        display:none;
+    }
+
+    .nav-links{
+        display:flex;
+    }
+
+}
+
+/* Animation */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-15px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+    
+    /* Location Section */
+#location{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 2rem 5rem;
+}
+
+/* Location Section */
+#location{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 2rem 5rem;
+}
+
+.location-box{
+    width:100%;
+    background:#ffffff;
+    border-top:5px solid var(--secondary-color);
+    border-radius:16px;
+    padding:2.5rem;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.location-icon{
+    font-size:2.8rem;
+    color:var(--secondary-color);
+    margin-bottom:1rem;
+}
+
+.location-box h2{
+    color:var(--primary-color);
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+
+.location-box p{
+    color:var(--text-light);
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.location-icon{
+    font-size:2.5rem;
+    color:var(--secondary-color);
+    margin-bottom:1rem;
+}
+
+.location-box h2{
+    color:var(--primary-color);
+    margin-bottom:.8rem;
+}
+
+.location-box p{
+    color:var(--text-light);
+    font-size:1.05rem;
+}
+    
+    /* Contact Buttons */
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.contact-btn i {
+    font-size: 1.2rem;
+}
+        :root {
+            --primary-color: #1e3a8a; /* Deep Blue */
+            --secondary-color: #2563eb; /* Royal Blue */
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+    transition:all .35s ease;
+}
+
+   .nav-container{
+        max-width:1200px;
+        margin:0 auto;
+        padding:1rem 2rem;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+
+        transition:all .35s ease;
+}
+    
+    nav.scrolled .nav-container{
+        padding: .55rem 2rem;
+}
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    
+       .logo img{
+    height:45px;
+    width:auto;
+    display:block;
+
+    transition:all .35s ease;
+}
+    
+    nav.scrolled .logo img{
+    height:36px;
+}
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+   .about-content{
+    max-width:760px;
+    margin:0 auto;
+}
+
+.about-content p{
+    font-size:1.15rem;
+    line-height:2;
+    color:var(--text-light);
+    text-align:center;
+    letter-spacing:.2px;
+}
+
+        .section-title {
+            text-align: center;
+            font-size: 1.34rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+    
+    #about .section-title{
+    margin-bottom:2rem;
+}
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+#home{
+    max-width:1200px;
+    margin:80px auto 0;
+    padding:60px 2rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:4rem;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero-title{
+    font-size:3.5rem;
+    font-weight:700;
+    line-height:1.15;
+    margin-bottom:1rem;
+    color:var(--text-dark);
+}
+
+.hero-subtitle{
+    font-size:1.6rem;
+    color:var(--secondary-color);
+    margin-bottom:1.5rem;
+    font-weight:500;
+}
+
+.hero-text{
+    font-size:1.1rem;
+    color:var(--text-light);
+    line-height:1.8;
+    max-width:600px;
+    margin-bottom:2rem;
+}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image .img-placeholder{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:var(--primary-color);
+    border:8px solid #fff;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:4.5rem;
+    font-weight:700;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}   
+    
+   .hero-image .img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    display: block;
+}
+    
+    .hero-image .img-placeholder:hover {
+    transform: translateY(-6px) scale(1.03);
+
+    box-shadow:
+        0 0 0 6px rgba(37,99,235,0.22),
+        0 20px 45px rgba(0,0,0,0.25);
+}
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image .img-placeholder {
+    width: 350px;
+    height: 350px;
+    padding: 8px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb,
+        #60a5fa,
+        #2563eb,
+        #1e3a8a
+    );
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.18),
+        0 15px 35px rgba(0,0,0,.18);
+
+    transition: .4s ease;
+}
+        
+        /* Skills & Training Grids */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card{
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-top:4px solid var(--secondary-color);
+
+    border-radius:18px;
+
+    padding:2rem;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+    
+    .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.45),
+        transparent 45%
+    );
+
+    pointer-events:none;
+
+}
+
+        .card:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:rgba(37,99,235,.45);
+
+    box-shadow:
+        0 0 0 1px rgba(37,99,235,.18),
+        0 18px 45px rgba(0,0,0,.15);
+
+}
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition:.35s ease;
+        }
+    
+    .card:hover h3{
+
+    color:var(--secondary-color);
+
+}
+        
+        .card h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Timeline (Education) */
+        .timeline{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+    padding-left:55px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:18px;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:linear-gradient(
+        to bottom,
+        var(--secondary-color),
+        #60a5fa
+    );
+    border-radius:50px;
+}
+
+.timeline-item{
+    position:relative;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:18px;
+
+    padding:1.8rem;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+}
+    
+    .timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    left:-49px;
+    top:32px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    border:4px solid #ffffff;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 0 6px rgba(37,99,235,.12),
+        0 0 22px rgba(37,99,235,.35);
+
+    transition:.35s ease;
+
+}
+    
+    .timeline-item:hover::before{
+
+    transform:scale(1.18);
+
+}
+    
+    .timeline-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.15);
+
+    border-color:rgba(37,99,235,.35);
+
+}
+    
+    .timeline-item h3{
+    font-size:1.35rem;
+    color:var(--primary-color);
+    margin-bottom:.45rem;
+    font-weight:700;
+    transition:.35s ease;
+}
+
+.timeline-item h4{
+    font-size:1.05rem;
+    color:var(--text-dark);
+    font-weight:600;
+    margin-bottom:.6rem;
+}
+
+.timeline-item p{
+    color:var(--text-light);
+    line-height:1.7;
+}
+
+.timeline-item .date{
+    display:inline-block;
+    margin-bottom:.8rem;
+    padding:5px 12px;
+    background:rgba(37,99,235,.12);
+    color:var(--secondary-color);
+    border-radius:50px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.timeline-item:hover h3{
+    color:var(--secondary-color);
+}
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+    
+    footer hr{
+    width:120px;
+    height:1px;
+    margin:18px auto 16px;
+
+    border:none;
+
+    background:rgba(255,255,255,.25);
+}
+    
+    .footer-credit{
+    margin-top:10px;
+    font-size:0.95rem;
+    color:rgba(255,255,255,.8);
+    line-height:1.6;
+}
+
+        /* Responsive */
+    
+          /* Mobile */
+@media (max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    #home{
+        flex-direction:column-reverse;
+        text-align:center;
+        margin-top:70px;
+        padding:40px 1.5rem;
+        gap:2rem;
+    }
+
+    .hero-content{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-title{
+        font-size:2.4rem;
+    }
+
+    .hero-subtitle{
+        font-size:1.25rem;
+    }
+
+    .hero-text{
+        max-width:100%;
+    }
+
+    .hero-image .img-placeholder{
+        width:220px;
+        height:220px;
+        font-size:3rem;
+    }
+
+    .btn{
+        margin:5px;
+    }
+
+}
+    
+        /* Tablet */
+@media (max-width:991px){
+
+    #home{
+        gap:2rem;
+        padding:50px 2rem;
+    }
+
+    .hero-title{
+        font-size:1.98rem;
+    }
+
+    .hero-subtitle{
+        font-size:1.35rem;
+    }
+
+    .hero-image .img-placeholder{
+        width:260px;
+        height:260px;
+        font-size:3.8rem;
+    }
+
+}
+    /* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#backToTop:hover {
+    background: var(--primary-color);
+    transform: translateY(-4px);
+}
+    
+    /* Contact Section - Mobile */
+@media (max-width: 768px) {
+
+    .contact-grid {
+        gap: 0.8rem;
+    }
+
+    .contact-item {
+        padding: 0.5rem;
+    }
+
+    .contact-btn {
+        margin-top: 0;
+    }
+
+}
+    
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </a>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">MD. RAKIBUL ISLAM</h1>
+            <h2 class="hero-subtitle">Diploma Mechanical Engineer</h2>
+            <p class="hero-text">
+                Motivated mechanical engineering professional with hands-on training in industrial attachment, technical workshops, machining, and mechanical maintenance.
+            </p>
+            <a href="#contact" class="btn">Contact Me</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+        </div>
+        <div class="hero-image">
+            <div class="img-placeholder">
+    <img src="images/profile.jpg"
+         alt="Md. Rakibul Islam">
+              </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background-color: var(--white);">
+        <h2 class="section-title">ABOUT</h2>
+        <div class="about-content">
+            <p>
+                I am a Diploma Mechanical Engineer with practical training in mechanical maintenance, manufacturing, machining, and workshop practices. Through academic projects and industrial attachment, I have developed a strong foundation in engineering principles, machine operations, welding, and production processes.
+
+I am eager to begin my professional career in the manufacturing or maintenance industry, where I can apply my technical skills, continue learning, and contribute to organizational success.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">SKILLS</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3><i class="fas fa-cogs"></i> Mechanical Skills</h3>
+                <ul class="skill-list">
+                    <li>Mechanical Maintenance</li>
+                    <li>Machining Operations (Lathe, Drilling, Grinding)</li>
+                    <li>Arc & Gas Welding</li>
+                    <li>Foundry & Sand Moulding</li>
+                    <li>Mechanical Measurement (Vernier, Micrometer)</li>
+                    <li>Engineering Drawing Interpretation</li>
+                    <li>Equipment Troubleshooting</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fas fa-laptop"></i> Digital & IT Skills</h3>
+                <ul class="skill-list">
+                    <li>Microsoft Word, Excel & PowerPoint</li>
+                    <li>AI Tools (ChatGPT & Gemini) & Prompt Writing</li>
+                    <li>Computer Troubleshooting</li>
+                    <li>Internet & Email</li>
+                    <li>Bangla & English Typing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background-color: var(--white);">
+        <h2 class="section-title">EDUCATION & CERTIFICATION</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Diploma in Engineering (Mechanical)</h3>
+                <h4>Pabna Polytechnic Institute</h4>
+                <p><strong>Location:</strong> Pabna Sadar, Pabna</p>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>Dakhil (Science)</h3>
+                <h4>Bakhalbari Koigram Dakhil Madrasah</h4>
+                <p><strong>Location:</strong> Handial, Chatmohar, Pabna</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="date">Certification</div>
+                <h3>Digital Literacy Course for Youth</h3>
+                <h4>digitalliteracy.gov.bd</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Experience -->
+    <section id="experience">
+        <h2 class="section-title">TRAINING & PRACTICAL EXPERIENCE</h2>
+        
+        <div class="grid-container" style="margin-bottom: 3rem;">
+            <div class="card">
+                <h3><i class="fas fa-industry"></i> Industrial & Training</h3>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4>Industrial Attachment (12 Weeks)</h4>
+                    <p class="date">Project Solution Engineering & Consultancy Ltd.</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4>Fitting Cum Machine Shop & Welding (6 Months)</h4>
+                    <p class="date">Bangladesh Small & Cottage Industries Corporation (BSCIC).</p>
+                </div>
+                <div>
+                    <h4>Office Application Software (6 Months)</h4>
+                    <p class="date">Postal Academy, Rajshahi.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-tools"></i> Workshop Experience</h3>
+                <ul class="skill-list">
+                    <li>Performed turning, facing, drilling, and shaping operations.</li>
+                    <li>Practiced Arc Welding, Gas Welding, Gas Cutting, and Soldering.</li>
+                    <li>Prepared sand moulds using cope and drag.</li>
+                    <li>Operated grinding machines for tool grinding and metal cutting.</li>
+                    <li>Performed precision measurement and metal hardness testing.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 id="projects" class="section-title">ACADEMIC PROJECTS</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Mini Steam Power Plant</h3>
+                <p class="date">Group Project</p>
+                <ul class="skill-list">
+                    <li>Participated in the design and development of a mini steam power plant.</li>
+                    <li>Applied steam power generation concepts in a team-based academic project.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Foundry Mould Making</h3>
+                <p class="date">Group Project</p>
+                <ul class="skill-list">
+                    <li>Prepared sand moulds using existing patterns with cope and drag techniques.</li>
+                    <li>Led project activities and participated in mould assembly.</li>
+                    <li>Performed dimensional checks and followed foundry safety procedures.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact">
+    <h2 class="section-title">GET IN TOUCH</h2>
+
+    <div class="contact-grid">
+
+        <!-- LinkedIn -->
+        <div class="contact-item">
+            <a href="https://linkedin.com/in/md-rakibul-islam-me"
+               target="_blank"
+               class="contact-btn">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </a>
+        </div>
+
+        <!-- Facebook -->
+        <div class="contact-item">
+            <a href="https://facebook.com/rakibulislam6109"
+               target="_blank"
+               class="contact-btn">
+                <i class="fab fa-facebook-f"></i>
+                Facebook
+            </a>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-item">
+            <a href="mailto:rakibul6109@gmail.com"
+               class="contact-btn">
+                <i class="fas fa-envelope"></i>
+                Email
+            </a>
+        </div>
+        
+    </div>
+</section>
+    
+    <!-- Location Section -->
+<section id="location">
+    <div class="location-box">
+        <i class="fas fa-map-marker-alt location-icon"></i>
+        <h2>Location</h2>
+        <p>
+            West Bhurulia, DUET-1707<br>
+            Gazipur Sadar, Gazipur
+        </p>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+    <p>&copy; 2026 Md. Rakibul Islam. All Rights Reserved.</p>
+
+    <hr>
+
+    <p class="footer-credit">
+        Designed &amp; developed by Md. Rakibul Islam<br>
+        with assistance from ChatGPT and Google Gemini.
+    </p>
+</footer>
+  
+    <!-- Back to Top Button -->
+<button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+    // Back to Top Button
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "flex";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+    
+    /* Hamburger Menu */
+
+const hamburger=document.getElementById("hamburger");
+
+const navLinks=document.getElementById("navLinks");
+
+hamburger.addEventListener("click",()=>{
+
+    hamburger.classList.toggle("active");
+
+    navLinks.classList.toggle("active");
+
+});
+
+/* Menu Close After Click */
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        hamburger.classList.remove("active");
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+    
+    /* Active Navigation Highlight */
+
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+    
+    /* Navbar Shrink on Scroll */
+
+const navbar = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+    
+    </script>
+</body>
+</html>
